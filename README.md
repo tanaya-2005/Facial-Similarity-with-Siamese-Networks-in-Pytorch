@@ -1,26 +1,39 @@
-# Facial Similarity with Siamese Networks in Pytorch
-You can read the accompanying article at https://hackernoon.com/one-shot-learning-with-siamese-networks-in-pytorch-8ddaab10340e
+# 🧠 Facial Similarity using Siamese Networks (PyTorch)
 
-The goal is to teach a siamese network to be able to distinguish pairs of images. 
-This project uses pytorch. 
+This project demonstrates how to use Siamese Neural Networks to determine the similarity between two images. The model learns to distinguish whether two input images belong to the same class or not.
 
-Any dataset can be used. Each class must be in its own folder. This is the same structure that PyTorch's own image folder dataset uses.
+---
 
-## Update: Looking for contributor (July 2020)
-If you would like to be a part of this projec, please head to https://github.com/harveyslash/Facial-Similarity-with-Siamese-Networks-in-Pytorch/issues/35
+## 📌 Overview
 
+Siamese Networks are a special type of neural network architecture that compares two inputs and learns their similarity. Instead of classifying images directly, the model learns a function that maps images into an embedding space where similar images are closer together.
 
-### Converting pgm files (if you decide to use the AT&T dataset) to png
-1. Install imagemagick 
-2. Go to root directory of the images
-3. Run `find -name "*pgm" | xargs -I {} convert {} {}.png`
+---
 
+## 📂 Dataset
 
+The project uses a face dataset where:
+- Each class (person) is stored in a separate folder  
+- Each folder contains multiple images of the same individual  
 
-## Installing the right version of PyTorch 
-This project is updated to be compatible with pytorch 0.4.0
+This structure follows the standard format used in PyTorch image datasets.
 
+---
 
+## ⚙️ Model Concept
 
-#### This project requires python3.6
+- Two identical neural networks (shared weights) process two input images  
+- The outputs are compared using a distance function  
+- The network learns to minimize distance for similar images and maximize it for different ones  
+
+---
+
+## 🛠️ Technologies Used
+
+- Python  
+- PyTorch  
+- NumPy  
+- OpenCV / PIL  
+
+---
 
